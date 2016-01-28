@@ -15,6 +15,7 @@ defmodule PhoenixF1JsonApi.Router do
 
   scope "/", PhoenixF1JsonApi do
     pipe_through :browser # Use the default browser stack
+    resources "/seasons", SeasonController, except: [:new, :edit]
 
     get "/", PageController, :index
   end
